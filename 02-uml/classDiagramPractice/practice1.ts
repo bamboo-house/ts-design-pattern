@@ -1,18 +1,19 @@
-// クラス図 演習1
-class Employee {
-    private id: number;
-    private name: string;
-    private salary: number;
+// 演習１
 
-    work() {
-        console.log('働きます');
-    }
+class Emproyee {
+  private id: number;
+  private name: string;
+  private salary: number;
 
-    protected getSalary():number {
-        return this.salary;
-    }
+  work(): void {
+    console.log("働く");
+  }
 
-    protected setSalary(salary: number) {
-        this.salary = salary;
-    }
+  protected getSalary(): number {
+    return this.salary;
+  }
+
+  protected setSalary(salary: number): void {
+    this.salary = salary;
+  }
 }
