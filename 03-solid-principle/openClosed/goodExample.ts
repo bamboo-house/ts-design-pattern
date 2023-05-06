@@ -1,53 +1,56 @@
-// export {}
+// オープン・クローズド原則　=> 「拡張に対しては開いていて、修正に対しては閉じているべきである」
+// 「変更が発生した際に、なるべき既存のコードを修正せずにコードの追加だけで対応できるようにすべき」という考え方
 
-// interface IEmployee {
-//     name: string;
-//     getBonus(base: number): number;
-// }
+export {}
 
-// class JuniorEmployee implements IEmployee {
-//     constructor(public name: string) {}
+interface IEmployee {
+    name: string;
+    getBonus(base: number): number;
+}
 
-//     getBonus(base: number): number {
-//         return Math.floor(base * 1.1);
-//     }
-// }
+class JuniorEmployee implements IEmployee {
+    constructor(public name: string) {}
 
-// class MiddleEmployee implements IEmployee {
-//     constructor(public name: string) {}
+    getBonus(base: number): number {
+        return Math.floor(base * 1.1);
+    }
+}
 
-//     getBonus(base: number): number {
-//         return Math.floor(base * 1.5);
-//     }
-// }
+class MiddleEmployee implements IEmployee {
+    constructor(public name: string) {}
 
-// class SeniorEmployee implements IEmployee {
-//     constructor(public name: string) {}
+    getBonus(base: number): number {
+        return Math.floor(base * 1.5);
+    }
+}
 
-//     getBonus(base: number): number {
-//         return Math.floor(base * 2);
-//     }
-// }
+class SeniorEmployee implements IEmployee {
+    constructor(public name: string) {}
 
-// class ExpertEmployee implements IEmployee {
-//     constructor(public name: string) {}
+    getBonus(base: number): number {
+        return Math.floor(base * 2);
+    }
+}
 
-//     getBonus(base: number): number {
-//         return Math.floor(base * 3);
-//     }
-// }
+class ExpertEmployee implements IEmployee {
+    constructor(public name: string) {}
 
-// function run() {
-//     const emp1 = new JuniorEmployee("Yamada");
-//     const emp2 = new MiddleEmployee("Suzuki");
-//     const emp3 = new SeniorEmployee("Tanaka");
-//     const emp4 = new ExpertEmployee("Bob");
+    getBonus(base: number): number {
+        return Math.floor(base * 3);
+    }
+}
 
-//     const base = 100;
-//     console.log(emp1.getBonus(base));
-//     console.log(emp2.getBonus(base));
-//     console.log(emp3.getBonus(base));
-//     console.log(emp4.getBonus(base));
-// }
+function run() {
+    const emp1 = new JuniorEmployee("Yamada");
+    const emp2 = new MiddleEmployee("Suzuki");
+    const emp3 = new SeniorEmployee("Tanaka");
+    const emp4 = new ExpertEmployee("Bob");
 
-// run();
+    const base = 100;
+    console.log(emp1.getBonus(base));
+    console.log(emp2.getBonus(base));
+    console.log(emp3.getBonus(base));
+    console.log(emp4.getBonus(base));
+}
+
+run();
